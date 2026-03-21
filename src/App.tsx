@@ -1,29 +1,27 @@
-//import { useState } from 'react';
-//import IntroModal from './sections/IntroModal';
 import Header from './sections/Header';
-import HeroSection from './sections/HeroSection';
 import SpecialAndIfood from './sections/SpecialAndIfood';
-import Gallery from './sections/Gallery';
-import Services from './sections/Services';
 import Location from './sections/Location';
 import Footer from './sections/Footer';
 
-function App() {
-  //const [isIntroModalOpen, setIsIntroModalOpen] = useState(true);
+import AnimatedCakes from './sections/AnimatedCakes';
+import { CartProvider } from "./components/CartContext";
+import ProductsSection from './sections/ProductsSection';
+import InstagramGallery from './sections/InstagramGallery'
 
-  //const handleCloseModal = () => {
-  //  setIsIntroModalOpen(false);
-  //};
+
+function App() {
   return (
     <>
       <main className="flex min-h-screen flex-col">
-        <Header />
-        <HeroSection />
-        <SpecialAndIfood />
-        <Gallery />
-        <Services />
-        <Location />
-        <Footer />
+              <CartProvider>
+              <Header />
+                  <AnimatedCakes />
+                  <ProductsSection />
+                  <SpecialAndIfood />
+                  <InstagramGallery />
+                  <Location />
+                  <Footer />
+              </CartProvider>
       </main>
     </>
   );
