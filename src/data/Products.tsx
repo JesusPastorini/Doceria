@@ -60,7 +60,7 @@ export const products: Product[] = [
         ]
     },
     {
-        id: 2,
+        id: 3,
         name: "Ovo Coração",
         image: coracao,
         optionGroups: [
@@ -84,7 +84,7 @@ export const products: Product[] = [
         ]
     },
     {
-        id: 2,
+        id: 4,
         name: "Ovos Trufados",
         image: trufados,
         optionGroups: [
@@ -107,7 +107,7 @@ export const products: Product[] = [
         ]
     },
     {
-        id: 2,
+        id: 5,
         name: "Ovos Infantis",
         image: infantil,
         optionGroups: [
@@ -138,7 +138,7 @@ export const products: Product[] = [
         ]
     },
     {
-        id: 2,
+        id: 6,
         name: "Trufas Recheadas",
         price: 80,
         image: trufas,
