@@ -1,4 +1,4 @@
-import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaWhatsapp, FaCode } from 'react-icons/fa';
 import logo from '../assets/Logo2.png';
 import devLogo from '../assets/LogoJP.png';
 
@@ -74,7 +74,7 @@ md:gap-16">
 
                         <br />
 
-                        <p>Delivery</p>
+                        <p>Entregas sob encomenda • Consulte disponibilidade</p>
 
                         <br />
 
@@ -82,8 +82,39 @@ md:gap-16">
                             href="https://portifolio-mu-one-58.vercel.app/"
                             target="_blank"
                             rel="noopener noreferrer"
+                            className="mt-10 flex flex-col items-center gap-3 group"
                         >
-                            <img src={devLogo} alt="Logo Desenvolvedor" className="h-12 mt-8" />
+                            {/* 🔥 BADGE TOP */}
+                            <div className="
+        flex items-center gap-3 
+        px-5 py-2 
+        rounded-full 
+        bg-gradient-to-r from-yellow-400 via-orange-500 to-pink-500
+        text-white font-semibold text-sm
+        shadow-xl
+        animate-pulse
+        group-hover:scale-110
+        transition duration-300
+    ">
+                                <FaCode className="text-white text-lg" />
+                                Desenvolvido por
+                            </div>
+
+                            {/* 💻 LOGO COM GLOW */}
+                            <div className="relative">
+                                <div className="absolute inset-0 bg-yellow-400 blur-xl opacity-40 rounded-full animate-pulse"></div>
+
+                                <img
+                                    src={devLogo}
+                                    alt="Logo Desenvolvedor"
+                                    className="relative h-14 transition duration-300 group-hover:scale-110"
+                                />
+                            </div>
+
+                            {/* ✨ FRASE EXTRA (OPCIONAL, mas MUITO forte) */}
+                            <span className="text-xs text-white/80 group-hover:text-white transition">
+                                Sites modernos • rápidos • responsivos
+                            </span>
                         </a>
                     </div>
                 </footer>
