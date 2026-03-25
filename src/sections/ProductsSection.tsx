@@ -7,21 +7,27 @@ export default function ProductsSection() {
     const { addToCart } = useCart();
 
     const [quantity, setQuantity] = useState<Record<number, number>>({});
-    const [selectedOptions, setSelectedOptions] = useState<
-        Record<number, Record<string, number>>
-    >({});
+    const [selectedOptions, setSelectedOptions] = useState<Record<number, Record<string, number>>>({});
 
     const increase = (id: number) => {
+        const product = products.find(p => p.id === id);
+        const step = product?.step || 1;
+        const min = product?.min || 1; // Ajustado para usar min inicial se não houver qtd
+
         setQuantity(prev => ({
             ...prev,
-            [id]: (prev[id] || 1) + 1
+            [id]: (prev[id] || min) + step
         }));
     };
 
     const decrease = (id: number) => {
+        const product = products.find(p => p.id === id);
+        const step = product?.step || 1;
+        const min = product?.min || 1;
+
         setQuantity(prev => ({
             ...prev,
-            [id]: Math.max((prev[id] || 1) - 1, 1)
+            [id]: Math.max((prev[id] || min) - step, min)
         }));
     };
 
@@ -51,11 +57,19 @@ export default function ProductsSection() {
     return (
         <section id="ecomerce" className="bg-gray-100 py-10 scroll-mt-24">
 
-            <div className="max-w-xl mx-auto flex flex-col gap-6 px-4">
+            <div className="
+    max-w-7xl mx-auto px-4
+    grid gap-6
+    grid-cols-1
+    sm:grid-cols-2
+    md:grid-cols-3
+    lg:grid-cols-4
+">
 
                 {products.map(product => {
 
-                    const qty = quantity[product.id] || 1;
+                    const defaultQty = product.min || 1;
+                    const qty = quantity[product.id] || defaultQty;
                     const price = getPrice(product);
 
                     return (

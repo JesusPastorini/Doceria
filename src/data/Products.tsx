@@ -2,7 +2,7 @@
 import bolo2 from "../assets/ovoTradicionalComum.png";
 import coracao from "../assets/ovoCoracao.png";
 import infantil from "../assets/ovoInfantil.png";
-import trufas from "../assets/trufas.png";
+import docinhos2 from "../assets/docinhos2.png";
 import trufados from "../assets/ovoTrufado.png";
 
 // 🔥 TIPOS
@@ -15,7 +15,7 @@ export type ProductOption = {
 export type OptionGroup = {
     name: string;
     options: ProductOption[];
-    type?: "select" | "display"; // 👈 NOVO
+    type?: "select" | "display";
 };
 
 export type Product = {
@@ -23,6 +23,8 @@ export type Product = {
     name: string;
     price?: number;
     image: string;
+    step?: number;
+    min?: number;
     optionGroups?: OptionGroup[];
 };
 
@@ -139,18 +141,21 @@ export const products: Product[] = [
     },
     {
         id: 6,
-        name: "Trufas Recheadas",
-        price: 80,
-        image: trufas,
+        name: "Brigadeiros Gourmet",
+        price: 2,
+        image: docinhos2,
+        step: 100, // 👈 Pula de 100 em 100
+        min: 100,   // 👈 Mínimo de 100
         optionGroups: [
             {
-                name: "Recheios",
+                name: "Escolha o Topping (Adicional)",
+                type: "display",
                 options: [
-                    { label: "Chocolate Tradicional", default: true },
-                    { label: "Maracujá" },
-                    { label: "Ninho Com Nutela" },
-                    { label: "Prestigio" },
-                    { label: "Morango" }
+                    { label: "Confetes" },
+                    { label: "Granulado Colorido" },
+                    { label: "Coco Ralado" },
+                    { label: "Ouro em Pó (Gourmet)" },
+                    { label: "Pedacinhos de Paçoca" }
                 ]
             }
         ]
