@@ -7,6 +7,7 @@ import AnimatedCakes from './sections/AnimatedCakes';
 import { CartProvider } from "./components/CartContext";
 import ProductsSection from './sections/ProductsSection';
 import InstagramGallery from './sections/InstagramGallery'
+import { Analytics } from "@vercel/analytics/react";
 
 
 function App() {
@@ -22,7 +23,8 @@ function App() {
                   <Location />
                   <Footer />
               </CartProvider>
-      </main>
+          </main>
+          <Analytics />
     </>
   );
 }
