@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import Header from './sections/Header';
 import SpecialAndIfood from './sections/SpecialAndIfood';
 import Location from './sections/Location';
@@ -23,6 +24,7 @@ function App() {
                   <Footer />
               </CartProvider>
       </main>
+      <Analytics />
     </>
   );
 }
